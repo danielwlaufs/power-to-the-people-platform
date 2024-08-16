@@ -1,7 +1,7 @@
 // JavaScript to handle the login button functionality
 
 function redirectToMain() {
-    window.location.href = 'index.html'; // Redirect to the main site
+    window.location.href = 'platform.html'; // Redirect to the platform page
 }
 
 // Optional: If you want to add some interactivity or form validation
@@ -16,7 +16,7 @@ document.getElementById('login-btn').addEventListener('click', function(e) {
     if (username === '' || password === '') {
         alert('Please enter both username and password.');
     } else {
-        // Simulate login success and redirect to the main page
+        // Simulate login success and redirect to the platform page
         redirectToMain();
     }
 });
