@@ -1,0 +1,252 @@
+index.html <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power to the People Platform</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Power to the People Platform</h1>
+    </header>
+
+    <div class="container">
+        <section id="personal-data">
+            <h2>Personal Data</h2>
+            
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="no-information">No information</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                    <option value="d">Diverse</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <select id="age">
+                    <option value="no-information">No information</option>
+                    <option value="10-15">10 - 15</option>
+                    <option value="15-20">15 - 20</option>
+                    <option value="20-30">20 - 30</option>
+                    <option value="30-40">30 - 40</option>
+                    <option value="40-50">40 - 50</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="marital-status">Marital Status:</label>
+                <select id="marital-status">
+                    <option value="no-information">No information</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <div id="map"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="radius">Radius:</label>
+                <select id="radius">
+                    <option value="50">&lt; 50km</option>
+                    <option value="100">&lt; 100km</option>
+                    <option value="500">&lt; 500km</option>
+                    <option value="1000">&lt; 1000km</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <select id="education">
+                    <option value="no-information">No information</option>
+                    <option value="no-education">No Formal Education</option>
+                    <option value="high-school">High School</option>
+                    <option value="university-degree">University Degree</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="religion">Religion:</label>
+                <select id="religion">
+                    <option value="no-information">No information</option>
+                    <option value="christian">Christian</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="jewish">Jewish</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="political-leaning">Political Leaning:</label>
+                <select id="political-leaning">
+                    <option value="no-information">No information</option>
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="personal-purchase-interests">
+            <h2>Personal Purchase Interests</h2>
+
+            <div class="form-group">
+                <label for="general-category">Selected Categories: <span id="selected-general-category"></span></label>
+                <details id="general-category">
+                    <summary>Select Categories</summary>
+                    <label><input type="checkbox" value="Health and Wellness"> Health and Wellness</label>
+                    <label><input type="checkbox" value="Technology and Gadgets"> Technology and Gadgets</label>
+                    <label><input type="checkbox" value="Travel and Adventure"> Travel and Adventure</label>
+                    <label><input type="checkbox" value="Fashion and Beauty"> Fashion and Beauty</label>
+                    <label><input type="checkbox" value="Home and Garden"> Home and Garden</label>
+                    <label><input type="checkbox" value="Food and Beverage"> Food and Beverage</label>
+                    <label><input type="checkbox" value="Entertainment and Media"> Entertainment and Media</label>
+                    <label><input type="checkbox" value="Automotive"> Automotive</label>
+                    <label><input type="checkbox" value="Finance and Investment"> Finance and Investment</label>
+                    <label><input type="checkbox" value="Hobbies and Crafts"> Hobbies and Crafts</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="discovery-level">Selected Discovery Levels: <span id="selected-discovery-level"></span></label>
+                <details id="discovery-level">
+                    <summary>Select Discovery Levels</summary>
+                    <label><input type="checkbox" value="Broad Introduction into Brands"> Broad Introduction into Brands</label>
+                    <label><input type="checkbox" value="General Offerings"> General Offerings</label>
+                    <label><input type="checkbox" value="Specific Products or Services"> Specific Products or Services</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="brands">Brands:</label>
+                <input type="text" id="brands" placeholder="Enter brand name">
+            </div>
+
+            <div class="form-group">
+                <label for="ad-formats">Selected Ad Formats: <span id="selected-ad-formats"></span></label>
+                <details id="ad-formats">
+                    <summary>Select Ad Formats</summary>
+                    <label><input type="checkbox" value="Display"> Display</label>
+                    <label><input type="checkbox" value="Search"> Search</label>
+                    <label><input type="checkbox" value="Social Media"> Social Media</label>
+                    <label><input type="checkbox" value="Video"> Video</label>
+                    <label><input type="checkbox" value="Native"> Native</label>
+                    <label><input type="checkbox" value="Email"> Email</label>
+                    <label><input type="checkbox" value="Affiliate"> Affiliate</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="exclude-industries">Selected Exclude Industries: <span id="selected-exclude-industries"></span></label>
+                <details id="exclude-industries">
+                    <summary>Select Exclude Industries</summary>
+                    <label><input type="checkbox" value="Meat"> Meat</label>
+                    <label><input type="checkbox" value="Fur and Leather"> Fur and Leather</label>
+                    <label><input type="checkbox" value="Fast Fashion"> Fast Fashion</label>
+                    <label><input type="checkbox" value="Single-Use Plastics"> Single-Use Plastics</label>
+                    <label><input type="checkbox" value="Alcohol"> Alcohol</label>
+                    <label><input type="checkbox" value="Tobacco Products"> Tobacco Products</label>
+                    <label><input type="checkbox" value="Gambling Services"> Gambling Services</label>
+                    <label><input type="checkbox" value="Weapons and Firearms"> Weapons and Firearms</label>
+                    <label><input type="checkbox" value="Fossil Fuels"> Fossil Fuels</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="ad-style">Selected Ad Styles: <span id="selected-ad-style"></span></label>
+                <details id="ad-style">
+                    <summary>Select Ad Styles</summary>
+                    <label><input type="checkbox" value="Aesthetic"> Aesthetic</label>
+                    <label><input type="checkbox" value="Entertaining"> Entertaining</label>
+                    <label><input type="checkbox" value="Humorous"> Humorous</label>
+                    <label><input type="checkbox" value="Inspirational"> Inspirational</label>
+                    <label><input type="checkbox" value="Educational"> Educational</label>
+                    <label><input type="checkbox" value="Informative"> Informative</label>
+                    <label><input type="checkbox" value="Newsworthy"> Newsworthy</label>
+                    <label><input type="checkbox" value="Emotional"> Emotional</label>
+                    <label><input type="checkbox" value="Interactive"> Interactive</label>
+                </details>
+            </div>
+        </section>
+
+        <section id="occupational">
+            <h2>Occupational</h2>
+            
+            <div class="form-group">
+                <label for="occupational-category">Occupational Category:</label>
+                <select id="occupational-category">
+                    <option value="no-information">No information</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="retail">Retail</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="construction">Construction</option>
+                    <option value="public-services">Public Services</option>
+                    <option value="arts-entertainment">Arts and Entertainment</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="occupational-level">Occupational Level:</label>
+                <select id="occupational-level">
+                    <option value="no-information">No information</option>
+                    <option value="entry-level">Entry-Level</option>
+                    <option value="mid-level">Mid-Level</option>
+                    <option value="senior-level">Senior-Level</option>
+                    <option value="management">Management</option>
+                    <option value="executive">Executive</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="potential-products-services">Selected Products or Services: <span id="selected-products-services"></span></label>
+                <details id="potential-products-services">
+                    <summary>Select Products or Services</summary>
+                    <label><input type="checkbox" value="Consulting Services"> Consulting Services</label>
+                    <label><input type="checkbox" value="Professional Training and Development"> Professional Training and Development</label>
+                    <label><input type="checkbox" value="Workplace Technology Solutions"> Workplace Technology Solutions</label>
+                    <label><input type="checkbox" value="Industry-Specific Software"> Industry-Specific Software</label>
+                    <label><input type="checkbox" value="Health and Safety Products"> Health and Safety Products</label>
+                    <label><input type="checkbox" value="Financial Planning and Services"> Financial Planning and Services</label>
+                    <label><input type="checkbox" value="Marketing and Branding"> Marketing and Branding</label>
+                    <label><input type="checkbox" value="Human Resources Solutions"> Human Resources Solutions</label>
+                    <label><input type="checkbox" value="Logistics and Supply Chain Management"> Logistics and Supply Chain Management</label>
+                    <label><input type="checkbox" value="Legal and Compliance Services"> Legal and Compliance Services</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="job-offers">Interest in Job Offers:</label>
+                <select id="job-offers">
+                    <option value="no-information">No information</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Save Profile Button -->
+            <button id="save-profile-btn">Save Profile</button>
+        </section>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
