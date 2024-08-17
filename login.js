@@ -8,13 +8,6 @@ document.getElementById('login-btn').addEventListener('click', function(e) {
     // Prevent form submission (if there was a form element)
     e.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === '' || password === '') {
-        alert('Please enter both username and password.');
-    } else {
-        // Simulate login success and redirect to the platform page
-        redirectToMain();
-    }
+    // Directly call the redirection function without any conditions
+    redirectToMain();
 });
