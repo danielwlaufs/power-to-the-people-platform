@@ -268,16 +268,16 @@
                 // If marker exists, remove it
                 map.removeLayer(marker);
                 marker = null;
-            } else {
-                // Add marker at clicked location
-                marker = L.marker(e.latlng).addTo(map);
+            } 
+            
+            // Add marker at clicked location
+            marker = L.marker(e.latlng).addTo(map);
 
-                // Add click event to marker to remove it when clicked
-                marker.on('click', function() {
-                    map.removeLayer(marker);
-                    marker = null;
-                });
-            }
+            // Add click event to marker to remove it when clicked
+            marker.on('click', function() {
+                map.removeLayer(marker);
+                marker = null;
+            });
         });
     </script>
 </body>
