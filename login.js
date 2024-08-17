@@ -1,1 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login - Power to the People Platform</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap"><link rel="stylesheet" href="styles.css"></head><body><header><h1>Power to the People Platform</h1></header><div class="container login-container"><section id="login"><h2>Login</h2><div class="form-group"><label for="username">Username:</label><input type="text" id="username" placeholder="Enter your username"></div><div class="form-group"><label for="password">Password:</label><input type="password" id="password" placeholder="Enter your password"></div><div class="form-group"><button id="login-btn">Log In</button></div></section></div><!-- Link to JavaScript file --><script src="login.js"></script></body></html>
+// Add an event listener to the login buttondocument.getElementById('login-btn').addEventListener('click', function(e) {
+    // Show an alert to confirm the button is being clickedalert('Button clicked!');
+
+    // Redirect the user to the platform.html pagewindow.location.href = './platform.html';
+});
