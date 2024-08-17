@@ -173,4 +173,80 @@
                     <label><input type="checkbox" value="Entertaining"> Entertaining</label>
                     <label><input type="checkbox" value="Humorous"> Humorous</label>
                     <label><input type="checkbox" value="Inspirational"> Inspirational</label>
-                    <label><input type="checkbox" value="Educational"> Educational</labe
+                    <label><input type="checkbox" value="Educational"> Educational</label>
+                    <label><input type="checkbox" value="Informative"> Informative</label>
+                    <label><input type="checkbox" value="Newsworthy"> Newsworthy</label>
+                    <label><input type="checkbox" value="Emotional"> Emotional</label>
+                    <label><input type="checkbox" value="Interactive"> Interactive</label>
+                </details>
+            </div>
+        </section>
+
+        <section id="occupational">
+            <h2>Occupational</h2>
+            
+            <div class="form-group">
+                <label for="occupational-category">Occupational Category:</label>
+                <select id="occupational-category">
+                    <option value="no-information">No information</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="retail">Retail</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="construction">Construction</option>
+                    <option value="public-services">Public Services</option>
+                    <option value="arts-entertainment">Arts and Entertainment</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="occupational-level">Occupational Level:</label>
+                <select id="occupational-level">
+                    <option value="no-information">No information</option>
+                    <option value="entry-level">Entry-Level</option>
+                    <option value="mid-level">Mid-Level</option>
+                    <option value="senior-level">Senior-Level</option>
+                    <option value="management">Management</option>
+                    <option value="executive">Executive</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="potential-products-services">Selected Products or Services: <span id="selected-products-services"></span></label>
+                <details id="potential-products-services">
+                    <summary>Select Products or Services</summary>
+                    <label><input type="checkbox" value="Consulting Services"> Consulting Services</label>
+                    <label><input type="checkbox" value="Professional Training and Development"> Professional Training and Development</label>
+                    <label><input type="checkbox" value="Workplace Technology Solutions"> Workplace Technology Solutions</label>
+                    <label><input type="checkbox" value="Industry-Specific Software"> Industry-Specific Software</label>
+                    <label><input type="checkbox" value="Health and Safety Products"> Health and Safety Products</label>
+                    <label><input type="checkbox" value="Financial Planning and Services"> Financial Planning and Services</label>
+                    <label><input type="checkbox" value="Marketing and Branding"> Marketing and Branding</label>
+                    <label><input type="checkbox" value="Human Resources Solutions"> Human Resources Solutions</label>
+                    <label><input type="checkbox" value="Logistics and Supply Chain Management"> Logistics and Supply Chain Management</label>
+                    <label><input type="checkbox" value="Legal and Compliance Services"> Legal and Compliance Services</label>
+                </details>
+            </div>
+
+            <div class="form-group">
+                <label for="job-offers">Interest in Job Offers:</label>
+                <select id="job-offers">
+                    <option value="no-information">No information</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Save Profile Button -->
+            <button id="save-profile-btn">Save Profile</button>
+        </section>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
