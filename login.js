@@ -4,12 +4,10 @@ function redirectToMain() {
     window.location.href = 'platform.html'; // Redirect to the platform page
 }
 
-// Optional: If you want to add some interactivity or form validation
 document.getElementById('login-btn').addEventListener('click', function(e) {
-    // Prevent form submission (if you had a form element)
+    // Prevent form submission (if there was a form element)
     e.preventDefault();
 
-    // Optional: Here you could add form validation or other logic
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
