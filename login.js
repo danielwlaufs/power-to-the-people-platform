@@ -4,10 +4,8 @@ function redirectToMain() {
     window.location.href = 'platform.html'; // Redirect to the platform page
 }
 
+// Attach event listener to the login button
 document.getElementById('login-btn').addEventListener('click', function(e) {
-    // Prevent form submission (if there was a form element)
-    e.preventDefault();
-
-    // Directly call the redirection function without any conditions
-    redirectToMain();
+    e.preventDefault(); // Prevent any default form submission behavior
+    redirectToMain(); // Directly redirect to the main page
 });
